@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запуск презентации...</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        :root {
+            /* Мягкие пастельные и приглушенные тона */
+            --color-bg: #EAE6DF;        /* Сложный пастельный серо-бежевый фон */
+            --color-navy: #1A2E40;      /* Приглушенный матовый синий для текста */
+            --color-accent: #52A290;    /* Матовый пастельно-шалфейный акцент вместо яркого неона */
+            
+            /* Новые мягкие тени для эффекта тактильной подушки на этом фоне */
+            --shadow-dark: #CDCAD3;     /* Мягкая темная тень */
+            --shadow-light: #FFFFFF;    /* Чистый белый блик */
+        }
+
+        body {
+            background-color: var(--color-bg);
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        /* Мягкая матовая подушечка */
+        .pillow-card {
+            background: var(--color-bg);
+            border-radius: 32px;
+            box-shadow: 
+                14px 14px 28px var(--shadow-dark), 
+                -14px -14px 28px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .pillow-card:hover {
+            box-shadow: 
+                9px 9px 18px var(--shadow-dark), 
+                -9px -9px 18px var(--shadow-light);
+        }
+
+        /* Кнопка-подушка */
+        .pillow-btn {
+            background: var(--color-bg);
+            border-radius: 14px;
+            box-shadow: 
+                4px 4px 10px var(--shadow-dark), 
+                -4px -4px 10px var(--shadow-light);
+            transition: all 0.2s ease;
+            color: var(--color-navy);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .pillow-btn:hover {
+            color: var(--color-accent);
+            box-shadow: 
+                2px 2px 6px var(--shadow-dark), 
+                -2px -2px 6px var(--shadow-light);
+        }
+
+        .pillow-btn:active {
+            box-shadow: 
+                inset 3px 3px 6px var(--shadow-dark), 
+                inset -3px -3px 6px var(--shadow-light);
+        }
+
+        /* Пастельный круговой лоадер */
+        .loader {
+            width: 44px;
+            height: 44px;
+            border: 4px solid var(--shadow-dark);
+            border-top: 4px solid var(--color-accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen m-0">
+
+    <div class="pillow-card w-full max-w-sm p-10 text-center flex flex-col items-center mx-4">
+        
+        <div class="loader mb-6"></div>
+        
+        <h1 class="text-2xl font-bold mb-2 tracking-wide" style="color: var(--color-navy);">
+            Перенаправление
+        </h1>
+        
+        <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+            Подключаемся к удаленному серверу...<br>
+            Загрузка интерактивной презентации АРМ
+        </p>
+
+        <a href="https://fantom1901.github.io/taiga-presentation/" class="pillow-btn w-full py-4 text-xs tracking-widest uppercase inline-block">
+            Открыть вручную
+        </a>
+    </div>
+
+    <script>
+        // Автоматический редирект через 2.5 секунды
+        setTimeout(() => {
+            window.location.href = "https://fantom1901.github.io/taiga-presentation/";
+        }, 2500);
+    </script>
+</body>
+</html>
